@@ -1,0 +1,94 @@
+
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    /**
+     * @description Manages user profile data, allowing only the authenticated user to read and write their own profile.
+     * @path /users/{userId}
+     * @allow (read, write) User with UID 'user123' can read/write document 'user123'.
+     * @deny (read, write) User with UID 'user456' cannot read/write document 'user123'.
+     * @principle Enforces document ownership for writes.
+     */
+    match /users/{userId} {
+      function isOwner() {
+        return request.auth != null && request.auth.uid == userId;
+      }
+      allow read, write: if isOwner();
+    }
+
+    /**
+     * @description Manages holiday package data, allowing public read access but restricting writes to authenticated users.
+     * @path /holidayPackages/{packageId}
+     * @allow (read) Any user can read holiday packages.
+     * @allow (create) Authenticated user can create a holiday package.
+     * @deny (create, update, delete) Unauthenticated user cannot create, update, or delete holiday packages.
+     * @principle Provides public read access while restricting write access.
+     */
+    match /holidayPackages/{packageId} {
+      allow read: if true;
+      allow write: if isSignedIn();
+    }
+
+    /**
+     * @description Manages video data, allowing public read access but restricting writes to authenticated users.
+     * @path /videos/{videoId}
+     * @allow (read) Any user can read video data.
+     * @allow (create) Authenticated user can create a video.
+     * @deny (create, update, delete) Unauthenticated user cannot create, update, or delete video data.
+     * @principle Provides public read access while restricting write access.
+     */
+    match /videos/{videoId} {
+      allow read: if true;
+      allow write: if isSignedIn();
+    }
+
+      /**
+       * @description Manages gallery image data, allowing public read access but restricting writes to authenticated users.
+       * @path /galleryImages/{imageId}
+       * @allow (read) Any user can read gallery images.
+       * @allow (create) Authenticated user can create a gallery image.
+       * @deny (create, update, delete) Unauthenticated user cannot create, update, or delete gallery images.
+       * @principle Provides public read access while restricting write access.
+       */
+    match /galleryImages/{imageId} {
+      allow read: if true;
+      allow write: if isSignedIn();
+    }
+
+    /**
+     * @description Manages site configuration data, allowing public read access but restricting writes to authenticated users.
+     * @path /siteConfig/notifications
+     * @allow (read) Any user can read site configuration.
+     * @allow (create) Authenticated user can create site configuration.
+     * @deny (create, update, delete) Unauthenticated user cannot create, update, or delete site configuration.
+     */
+    match /siteConfig/{document} {
+        allow read: if true;
+        allow write: if isSignedIn();
+    }
+
+    /**
+     * @description Manages testimonials data, allowing anyone to submit a testimonial, but only admins can modify or delete them.
+     *              Public users can only read approved testimonials.
+     * @path /testimonials/{testimonialId}
+     * @allow (read) Any user can read approved testimonials. Admins can read all.
+     * @allow (create) Any user can create a new testimonial.
+     * @allow (update, delete) Only signed-in users (admins) can update (approve) or delete testimonials.
+     */
+    match /testimonials/{testimonialId} {
+        // Public users can read only approved testimonials.
+        allow read: if resource.data.approved == true;
+        
+        // Anyone can submit a new testimonial, but it must be marked as not approved.
+        allow create: if request.resource.data.approved == false;
+
+        // Admins can read, update (approve), and delete any testimonial.
+        allow read, update, delete: if isSignedIn();
+    }
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+  }
+}

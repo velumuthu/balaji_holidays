@@ -1,0 +1,136 @@
+{
+  "placeholderImages": [
+    {
+      "id": "hero-1",
+      "description": "A stunning mountain landscape with a serene lake, representing travel and adventure.",
+      "imageUrl": "https://images.unsplash.com/photo-1612441804231-77a36b284856?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxtb3VudGFpbiUyMGxhbmRzY2FwZXxlbnwwfHx8fDE3NjA4NTg3NTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "mountain landscape"
+    },
+    {
+      "id": "package-hills-1",
+      "description": "Misty green hills of a beautiful hill station.",
+      "imageUrl": "https://images.unsplash.com/photo-1645187535083-eb782822489c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxncmVlbiUyMGhpbGxzfGVufDB8fHx8MTc2MDc4MTE4MHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "green hills"
+    },
+    {
+      "id": "package-pilgrimage-1",
+      "description": "An ancient, grand temple for pilgrimage tours.",
+      "imageUrl": "https://images.unsplash.com/photo-1565195161077-f5c5f61f9ea2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxhbmNpZW50JTIwdGVtcGxlfGVufDB8fHx8MTc2MDc1OTE0Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "ancient temple"
+    },
+    {
+      "id": "package-historical-1",
+      "description": "Majestic historical fort ruins.",
+      "imageUrl": "https://images.unsplash.com/photo-1708514046204-913739cf71ae?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxmb3J0JTIwcnVpbnN8ZW58MHx8fHwxNzYwODcxNDY2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "fort ruins"
+    },
+    {
+      "id": "package-honeymoon-1",
+      "description": "A beautiful beach sunset for honeymooners.",
+      "imageUrl": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxiZWFjaCUyMHN1bnNldHxlbnwwfHx8fDE3NjA4NTI0MjF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "beach sunset"
+    },
+    {
+      "id": "package-hills-2",
+      "description": "Snow-capped mountains under a clear blue sky.",
+      "imageUrl": "https://images.unsplash.com/photo-1527236278376-a1ed0f95da30?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8c25vd3klMjBtb3VudGFpbnN8ZW58MHx8fHwxNzYwODY4MjExfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "snowy mountains"
+    },
+    {
+      "id": "package-pilgrimage-2",
+      "description": "A peaceful monastery nestled in the mountains.",
+      "imageUrl": "https://images.unsplash.com/photo-1713214473331-031449cf5ca7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxtb3VudGFpbiUyMG1vbmFzdGVyeXxlbnwwfHx8fDE3NjA4NzE0Njd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "mountain monastery"
+    },
+    {
+      "id": "package-detail-1",
+      "description": "A wide shot of a valley.",
+      "imageUrl": "https://images.unsplash.com/photo-1697382177428-62ba36137c11?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx2YWxsZXklMjB2aWV3fGVufDB8fHx8MTc2MDg3MTQ2Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "valley view"
+    },
+    {
+      "id": "package-detail-2",
+      "description": "A close up of a local cultural artifact.",
+      "imageUrl": "https://images.unsplash.com/photo-1759340946094-62603dedcac1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjdWx0dXJhbCUyMGFydGlmYWN0fGVufDB8fHx8MTc2MDg3MTQ2Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cultural artifact"
+    },
+    {
+      "id": "package-detail-3",
+      "description": "A scenic waterfall in a lush forest.",
+      "imageUrl": "https://images.unsplash.com/photo-1612564690471-94b17be43a9e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzY2VuaWMlMjB3YXRlcmZhbGx8ZW58MHx8fHwxNzYwODcxNDY2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "scenic waterfall"
+    },
+    {
+      "id": "package-detail-4",
+      "description": "Local cuisine being prepared.",
+      "imageUrl": "https://images.unsplash.com/photo-1626132662218-5a8d77069d1b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxsb2NhbCUyMGZvb2R8ZW58MHx8fHwxNzYwODcxNDY2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "local food"
+    },
+    {
+      "id": "gallery-1",
+      "description": "A bustling city street at night.",
+      "imageUrl": "https://images.unsplash.com/photo-1601042879364-f3947d3f9c16?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjaXR5JTIwbmlnaHR8ZW58MHx8fHwxNzYwODQ5NTY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "city night"
+    },
+    {
+      "id": "gallery-2",
+      "description": "A tranquil desert landscape at dusk.",
+      "imageUrl": "https://images.unsplash.com/photo-1757438059066-cc0c1379cd06?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxkZXNlcnQlMjBkdXNrfGVufDB8fHx8MTc2MDg3MTQ2Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "desert dusk"
+    },
+    {
+      "id": "gallery-3",
+      "description": "Colorful hot air balloons in the sky.",
+      "imageUrl": "https://images.unsplash.com/photo-1660479185829-0b2462def5ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxob3QtYWlyJTIwYmFsbG9vbnN8ZW58MHx8fHwxNzYwODcxNDY2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "hot-air balloons"
+    },
+    {
+      "id": "gallery-4",
+      "description": "A winding road through a dense forest.",
+      "imageUrl": "https://images.unsplash.com/photo-1520022283252-ca69c721d247?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxmb3Jlc3QlMjByb2FkfGVufDB8fHx8MTc2MDg2NTQwN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "forest road"
+    },
+    {
+      "id": "gallery-5",
+      "description": "A tropical beach with white sand and clear water.",
+      "imageUrl": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx0cm9waWNhbCUyMGJlYWNofGVufDB8fHx8MTc2MDg0NDYzMXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "tropical beach"
+    },
+    {
+      "id": "gallery-6",
+      "description": "A vibrant local market with fresh produce.",
+      "imageUrl": "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxsb2NhbCUyMG1hcmtldHxlbnwwfHx8fDE3NjA4NjI5NTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "local market"
+    },
+    {
+      "id": "gallery-7",
+      "description": "Skyscrapers in a modern city skyline.",
+      "imageUrl": "https://images.unsplash.com/photo-1535498730771-e735b998cd64?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjaXR5JTIwc2t5bGluZXxlbnwwfHx8fDE3NjA4MjczMzJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "city skyline"
+    },
+    {
+      "id": "gallery-8",
+      "description": "A person hiking towards a mountain peak.",
+      "imageUrl": "https://images.unsplash.com/photo-1638635900836-26badb9fb9c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtb3VudGFpbiUyMGhpa2luZ3xlbnwwfHx8fDE3NjA4NTYyNjF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "mountain hiking"
+    },
+    {
+      "id": "testimonial-avatar-1",
+      "description": "Avatar for a testimonial.",
+      "imageUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxwZXJzb24lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjA4MjUzNjZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person portrait"
+    },
+    {
+      "id": "testimonial-avatar-2",
+      "description": "Avatar for a testimonial.",
+      "imageUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxwZXJzb24lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjA4MjUzNjZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person portrait"
+    },
+    {
+      "id": "testimonial-avatar-3",
+      "description": "Avatar for a testimonial.",
+      "imageUrl": "https://images.unsplash.com/photo-1521119989659-a83eee488004?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cGVyc29uJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzYwODI1MzY2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person portrait"
+    }
+  ]
+}

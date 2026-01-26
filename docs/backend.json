@@ -1,0 +1,219 @@
+
+{
+  "entities": {
+    "UserProfile": {
+      "title": "User Profile",
+      "description": "Represents a user's profile information.",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "description": "The user's unique ID."
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "The user's email address."
+        },
+        "name": {
+          "type": "string",
+          "description": "The user's display name."
+        }
+      },
+      "required": [
+        "uid",
+        "email"
+      ]
+    },
+    "HolidayPackage": {
+      "title": "Holiday Package",
+      "description": "Details about a holiday travel package.",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "slug": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string",
+          "enum": [
+            "hill-stations",
+            "pilgrimages",
+            "historical",
+            "honeymoon"
+          ]
+        },
+        "duration": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "rating": {
+          "type": "number"
+        },
+        "image": {
+          "type": "string"
+        },
+        "gallery": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "itinerary": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "day": {
+                "type": "number"
+              },
+              "title": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              }
+            },
+            "required": ["day", "title", "description"]
+          }
+        },
+        "virtualTourUrl": {
+            "type": "string",
+            "format": "uri",
+            "description": "An optional Google Maps Street View embed URL."
+        }
+      },
+      "required": [
+        "name",
+        "slug",
+        "category",
+        "duration",
+        "description",
+        "rating",
+        "image",
+        "gallery",
+        "itinerary"
+      ]
+    },
+    "Video": {
+      "title": "Video",
+      "description": "Represents a YouTube video for the gallery.",
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "The title of the video."
+        },
+        "videoId": {
+          "type": "string",
+          "description": "The YouTube video ID."
+        }
+      },
+      "required": [
+        "title",
+        "videoId"
+      ]
+    },
+    "GalleryImage": {
+      "title": "Gallery Image",
+      "description": "Represents an image in the public photo gallery.",
+      "type": "object",
+      "properties": {
+        "imageUrl": {
+          "type": "string",
+          "description": "The URL of the image."
+        },
+        "description": {
+          "type": "string",
+          "description": "A brief description of the image."
+        },
+        "imageHint": {
+          "type": "string",
+          "description": "AI hint for the image content."
+        }
+      },
+      "required": ["imageUrl", "description", "imageHint"]
+    },
+    "SiteConfig": {
+        "title": "Site Configuration",
+        "description": "Stores site-wide configuration data, like notification text and home page video.",
+        "type": "object",
+        "properties": {
+            "notifications": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                },
+                "description": "An array of strings for the scrolling notification bar."
+            },
+            "homePageVideoId": {
+                "type": "string",
+                "description": "The YouTube video ID for the home page."
+            }
+        }
+    }
+  },
+  "auth": {
+    "providers": [
+      "email-password"
+    ]
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": {
+        "$ref": "#/entities/UserProfile"
+      },
+      "description": "Stores public profile information for each user."
+    },
+    "/holidayPackages/{packageId}": {
+      "schema": {
+        "$ref": "#/entities/HolidayPackage"
+      },
+      "description": "Stores all available holiday packages."
+    },
+    "/videos/{videoId}": {
+      "schema": {
+        "$ref": "#/entities/Video"
+      },
+      "description": "Stores YouTube videos for the gallery."
+    },
+    "/galleryImages/{imageId}": {
+        "schema": {
+            "$ref": "#/entities/GalleryImage"
+        },
+        "description": "Stores images for the public photo gallery."
+    },
+    "/siteConfig/notifications": {
+        "schema": {
+            "$ref": "#/entities/SiteConfig"
+        },
+        "description": "Stores configuration for site notifications and home page video."
+    },
+    "/testimonials/{testimonialId}": {
+        "schema": {
+            "type": "object",
+            "properties": {
+                "userName": {
+                    "type": "string"
+                },
+                "content": {
+                    "type": "string"
+                },
+                "rating": {
+                    "type": "number"
+                },
+                "approved": {
+                    "type": "boolean",
+                    "description": "Whether the testimonial has been approved by an admin."
+                }
+            },
+            "required": ["userName", "content", "rating", "approved"]
+        },
+        "description": "Stores user-submitted testimonials."
+    }
+  }
+}
