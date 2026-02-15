@@ -119,7 +119,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative h-[60vh] md:h-[80vh] w-full overflow-hidden">
         <video
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover pointer-events-none"
           autoPlay
           muted
           loop

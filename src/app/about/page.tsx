@@ -55,7 +55,7 @@ export default function AboutPage() {
 
         <div className="mt-20">
           <ScrollFadeIn className="text-center">
-            <h2 className="font-headline text-3xl font-semibold">Our Core Values</h2>
+   0         <h2 className="font-headline text-3xl font-semibold">Our Core Values</h2>
           </ScrollFadeIn>
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
             <ScrollFadeIn className="text-center p-6">

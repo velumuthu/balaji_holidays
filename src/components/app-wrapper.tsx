@@ -97,9 +97,7 @@ export function AppWrapper({
         <YouTubePopupProvider>
           <BookingPopupManager />
           <div className="relative flex min-h-screen flex-col z-10">
-            <ClientOnly>
-              <Header />
-            </ClientOnly>
+            <Header />
             <main className="flex-1">{children}</main>
             <Footer />
           </div>
