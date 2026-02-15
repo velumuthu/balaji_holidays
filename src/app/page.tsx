@@ -117,15 +117,18 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative h-[35vh] md:h-[45vh] w-full overflow-hidden">
-        <video
-          className="absolute inset-0 w-full h-full object-cover pointer-events-none"
-          autoPlay
-          muted
-          loop
-        >
-          <source src="/videos/nature_background.mp4" type="video/mp4" />
-        </video>
+      <section className="relative h-[60vh] md:h-[80vh] w-full overflow-hidden">
+        <div className="absolute inset-0 w-full h-full">
+          {heroImage ? (
+            <Image
+              src={heroImage.src}
+              alt={heroImage.alt || 'Hero image'}
+              fill
+              className="object-cover"
+              priority
+            />
+          ) : null}
+        </div>
         <div className="absolute inset-0 bg-black/40 pointer-events-none" />
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white p-4">
             <ScrollFadeIn>
