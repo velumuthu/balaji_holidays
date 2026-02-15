@@ -67,120 +67,119 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-[100] w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container max-w-7xl px-4">
-        <NotificationBar />
+      <NotificationBar />
+      
+      <div className="container flex h-16 max-w-7xl items-center justify-between">
+        <div className="flex items-center gap-6">
+          <Link href="/" className="flex items-center gap-2 font-headline font-bold text-xl">
+             <div><span className="text-yellow-500">Balaji</span> Holidays</div>
+          </Link>
+        </div>
 
-        <div className="flex h-16 items-center justify-between w-full">
-          <div className="flex items-center gap-6">
-            <Link href="/" className="flex items-center gap-2 font-headline font-bold text-xl">
-              <div>
-                <span className="text-yellow-500">Balaji</span> Holidays
-              </div>
+        <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="transition-colors hover:text-foreground/80 text-foreground/60"
+            >
+              {link.label}
             </Link>
-          </div>
+          ))}
+        </nav>
 
-          <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="transition-colors hover:text-foreground/80 text-foreground/60"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-
-          <div className="hidden md:flex items-center gap-4">
-            <Button onClick={() => openModal()}>Book Now</Button>
-            <div className="flex items-center gap-2 text-sm font-medium">
-              <Phone className="h-4 w-4" />
-              <div className="flex flex-col">
+        <div className="hidden md:flex items-center gap-4">
+          <Button onClick={() => openModal()}>Book Now</Button>
+          <div className="flex items-center gap-2 text-sm font-medium">
+            <Phone className="h-4 w-4" />
+            <div className='flex flex-col'>
                 <a href="tel:8695172090" className="hover:text-primary transition-colors">8695172090</a>
                 <a href="tel:9787178910" className="hover:text-primary transition-colors">9787178910</a>
-              </div>
             </div>
-            <ThemeToggle />
-            {loading ? null : user ? (
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" className="relative h-8 w-8 rounded-full">
-                    <Avatar className="h-8 w-8">
-                      <AvatarFallback>{user.email?.[0].toUpperCase()}</AvatarFallback>
-                    </Avatar>
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-56" align="end" forceMount>
-                  <DropdownMenuLabel className="font-normal">
-                    <div className="flex flex-col space-y-1">
-                      <p className="text-sm font-medium leading-none">Admin</p>
-                      <p className="text-xs leading-none text-muted-foreground">
-                        {user.email}
-                      </p>
-                    </div>
-                  </DropdownMenuLabel>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem onClick={() => router.push('/admin/dashboard')}>
-                    <LayoutDashboard className="mr-2 h-4 w-4" />
-                    <span>Dashboard</span>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem onClick={handleSignOut}>
-                    <LogOut className="mr-2 h-4 w-4" />
-                    <span>Log out</span>
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
-            ) : null}
           </div>
+          <ThemeToggle />
+          {loading ? null : user ? (
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" className="relative h-8 w-8 rounded-full">
+                  <Avatar className="h-8 w-8">
+                    <AvatarFallback>{user.email?.[0].toUpperCase()}</AvatarFallback>
+                  </Avatar>
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-56" align="end" forceMount>
+                <DropdownMenuLabel className="font-normal">
+                  <div className="flex flex-col space-y-1">
+                    <p className="text-sm font-medium leading-none">Admin</p>
+                    <p className="text-xs leading-none text-muted-foreground">
+                      {user.email}
+                    </p>
+                  </div>
+                </DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem onClick={() => router.push('/admin/dashboard')}>
+                  <LayoutDashboard className="mr-2 h-4 w-4" />
+                  <span>Dashboard</span>
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={handleSignOut}>
+                  <LogOut className="mr-2 h-4 w-4" />
+                  <span>Log out</span>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          ) : (
+            null
+          )}
+        </div>
 
-          <div className="flex items-center gap-2 md:hidden">
+        {/* Mobile Menu */}
+        <div className="flex items-center gap-2 md:hidden">
             <Button size="sm" onClick={() => openModal()}>Book Now</Button>
             <Sheet>
-              <SheetTrigger asChild>
+            <SheetTrigger asChild>
                 <Button variant="outline" size="icon">
-                  <Menu className="h-6 w-6" />
+                <Menu className="h-6 w-6" />
                 </Button>
-              </SheetTrigger>
-              <SheetContent side="right" className="w-full sm:w-[320px]">
+            </SheetTrigger>
+            <SheetContent side="right" className="w-full sm:w-[320px]">
                 <SheetHeader>
                   <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
-                  <Link href="/" className="flex items-center gap-2 font-headline font-bold text-xl">
-                    <div>
-                      <span className="text-yellow-500">Balaji</span> Holidays
-                    </div>
-                  </Link>
+                    <Link href="/" className="flex items-center gap-2 font-headline font-bold text-xl">
+                        <div><span className="text-yellow-500">Balaji</span> Holidays</div>
+                    </Link>
                 </SheetHeader>
                 <div className="flex flex-col gap-6 mt-8">
-                  <nav className="flex flex-col gap-4">
+                <nav className="flex flex-col gap-4">
                     {navLinks.map((link) => (
-                      <SheetClose asChild key={link.href}>
+                    <SheetClose asChild key={link.href}>
                         <Link
-                          href={link.href}
-                          className="text-lg font-medium transition-colors hover:text-primary"
+                            href={link.href}
+                            className="text-lg font-medium transition-colors hover:text-primary"
                         >
-                          {link.label}
+                            {link.label}
                         </Link>
-                      </SheetClose>
+                    </SheetClose>
                     ))}
-                  </nav>
-                  <div className="flex flex-col gap-4">
+                </nav>
+                <div className='flex flex-col gap-4'>
                     <div className="flex items-center gap-2 text-md font-medium">
-                      <Phone className="h-5 w-5" />
-                      <div>
-                        <a href="tel:8695172090" className="hover:text-primary transition-colors">8695172090</a> / <a href="tel:9787178910" className="hover:text-primary transition-colors">9787178910</a>
-                      </div>
+                        <Phone className="h-5 w-5" />
+                        <div>
+                            <a href="tel:8695172090" className="hover:text-primary transition-colors">8695172090</a> / <a href="tel:9787178910" className="hover:text-primary transition-colors">9787178910</a>
+                        </div>
                     </div>
-                    {loading ? null : user ? (
-                      <Button onClick={handleSignOut}>Log Out</Button>
-                    ) : null}
-                  </div>
-                  <div className="absolute bottom-4 right-4">
-                    <ThemeToggle />
-                  </div>
+                  {loading ? null : user ? (
+                    <Button onClick={handleSignOut}>Log Out</Button>
+                  ) : (
+                    null
+                  )}
                 </div>
-              </SheetContent>
+                 <div className='absolute bottom-4 right-4'>
+                    <ThemeToggle />
+                 </div>
+                </div>
+            </SheetContent>
             </Sheet>
-          </div>
         </div>
       </div>
     </header>
