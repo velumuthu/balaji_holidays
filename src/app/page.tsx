@@ -117,7 +117,7 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative h-[60vh] md:h-[80vh] w-full overflow-hidden">
+      <section className="relative h-[35vh] md:h-[45vh] w-full overflow-hidden">
         <video
           className="absolute inset-0 w-full h-full object-cover pointer-events-none"
           autoPlay
