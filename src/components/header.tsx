@@ -37,7 +37,7 @@ function NotificationBar() {
   if (!siteConfig || notifications.length === 0) return null;
 
   return (
-    <div className="bg-primary text-primary-foreground py-1 text-sm overflow-hidden w-full inline-flex flex-nowrap pointer-events-none">
+    <div className="bg-primary text-primary-foreground py-1 text-sm overflow-hidden w-full inline-flex flex-nowrap">
         <ul className="flex items-center justify-center md:justify-start [&_li]:mx-8 animate-marquee-partners">
             {notifications.map((note, index) => <li key={index} className="whitespace-nowrap">{note}</li>)}
         </ul>
