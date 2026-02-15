@@ -37,7 +37,7 @@ function NotificationBar() {
   if (!siteConfig || notifications.length === 0) return null;
 
   return (
-    <div className="bg-primary text-primary-foreground py-1 text-sm overflow-hidden w-full inline-flex flex-nowrap">
+    <div className="bg-primary text-primary-foreground py-1 text-sm overflow-hidden w-full inline-flex flex-nowrap pointer-events-none">
         <ul className="flex items-center justify-center md:justify-start [&_li]:mx-8 animate-marquee-partners">
             {notifications.map((note, index) => <li key={index} className="whitespace-nowrap">{note}</li>)}
         </ul>
@@ -66,7 +66,7 @@ export function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-[100] w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <NotificationBar />
       
       <div className="container flex h-16 max-w-7xl items-center justify-between">

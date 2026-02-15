@@ -126,7 +126,7 @@ export default function Home() {
         >
           <source src="/videos/nature_background.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/40 pointer-events-none" />
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white p-4">
             <ScrollFadeIn>
               <h1 className="font-headline text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight">
